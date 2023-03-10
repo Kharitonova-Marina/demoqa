@@ -6,10 +6,10 @@ def test_dark_theme():
     Протестируйте правильность переключения темной темы на сайте
     """
     current_time = time(hour=23)
-    if 6 >= current_time.hour >= 22:
-        is_dark_theme = False
-    else:
+    if 6 <= current_time.hour >= 22:
         is_dark_theme = True
+    else:
+        is_dark_theme = False
     assert is_dark_theme is True
 
     # TODO переключите темную тему в зависимости от времени суток (с 22 до 6 часов утра - ночь)
@@ -38,7 +38,7 @@ def test_find_suitable_user():
     ]
     # TODO найдите пользователя с именем "Olga"
 
-    suiable_user = [user for user in users if user.get("name") == "Olga"]
+    suiable_user = [user for user in users if user.get("name") == "Olga"][0]
 
     assert suiable_user == {"name": "Olga", "age": 45}
 
@@ -75,7 +75,7 @@ def function(func, *args):
         a += arg + ', '
     a = a[:-2]
     a += ']'
-    print(a)
+    print('\n' + a)
     return a
 
 
