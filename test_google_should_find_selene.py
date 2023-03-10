@@ -10,6 +10,3 @@ def test_searching(preparations):
     browser.open('https://www.google.com')
     browser.element('[name="q"]').should(be.blank).type('артольрапвчрплпанверкпиамьпаоеикпвыввфсфыфычфыч').press_enter()
     browser.element('[id="center_col"]').should(have.text('По запросу артольрапвчрплпанверкпиамьпаоеикпвыввфсфыфычфыч ничего не найдено.'))
-
-def negative_test():
-    browser.open('https://www.google.com')
