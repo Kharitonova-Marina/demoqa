@@ -2,8 +2,6 @@ from datetime import time
 
 
 def test_dark_theme():
-    is_dark_theme = False
-
     a = [time(hour=0),
          time(hour=1),
          time(hour=2),
@@ -29,8 +27,16 @@ def test_dark_theme():
          time(hour=22),
          time(hour=23)]
 
+    current_time = time(hour=23)
+    dark_theme_enabled = False
+    is_dark_theme = True
+
+    print('')
     for t in a:
-        if 5 < t.hour < 22:
+
+        if dark_theme_enabled == True:
+            is_dark_theme = True
+        elif 5 < t.hour < 22:
             is_dark_theme = False
         else:
             is_dark_theme = True
